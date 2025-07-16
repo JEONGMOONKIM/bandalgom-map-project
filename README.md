@@ -1,1 +1,4 @@
-# bandalgom-map-project
+# 🐻 Bandalgom Map Project
+
+Python으로 구현한 지역 구조 분석 및 경로 시각화 프로젝트입니다.  
+반달곰 커피 지점과 주변 구조물을 분석하고, 내 집에서 카페까지의 최단 경로를 탐색합니다.
