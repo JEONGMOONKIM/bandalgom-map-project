@@ -21,8 +21,7 @@ def main():
 
     df_area12 = df_struct[df_struct['area'].isin([1, 2])]
     # df_area1 = df_struct[df_struct['area']==1]
-    # df_sorted = df_struct.sort_values(by='area') # 정렬이 필요할 경우 사용
-    # df_area1 = df_sorted[df_sorted['area'] == 1]  
+
     
     print("area 1 구조물 데이터:")
     print(df_area12)
