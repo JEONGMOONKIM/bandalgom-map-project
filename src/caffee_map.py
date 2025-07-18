@@ -19,15 +19,24 @@ def main():
     df_struct.rename(columns={'struct': 'category'}, inplace=True)
     df_struct['category'] = df_struct['category'].astype(str).str.strip()
 
+    df_struct = df_struct.merge(df_map, how='left', on=['x', 'y']) #ConstructionSite 정보 merge
+    #ConstructionSite == 1 and category is nan → 'ConstructionSite'로 대체
+    mask = (df_struct['ConstructionSite'] == 1) & (df_struct['category'].str.lower() == 'nan') 
+    df_struct.loc[mask, 'category'] = 'ConstructionSite'
+    
+    df_struct.drop(columns=['ConstructionSite'], inplace=True)
+
+
+
     df_area12 = df_struct[df_struct['area'].isin([1, 2])]
-    # df_area1 = df_struct[df_struct['area']==1]
+    df_area1 = df_struct[df_struct['area']==1]
 
     
     print("area 1 구조물 데이터:")
-    print(df_area12)
+    print(df_area1)
 
     print("\n구조물 종류별 개수:")
-    print(df_area12['category'].value_counts())
+    print(df_area1['category'].value_counts())
 
     return df_area12
 
