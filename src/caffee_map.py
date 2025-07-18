@@ -28,8 +28,8 @@ def main():
 
 
 
-    df_area12 = df_struct[df_struct['area'].isin([1, 2])]
-    df_area1 = df_struct[df_struct['area']==1]
+    df_area12 = df_struct[df_struct['area'].isin([1, 2])] #'Myhome'이 포함된건 area2이므로 저장은 area1,2
+    df_area1 = df_struct[df_struct['area']==1] # 과제1에서 area1에 대해서만 출력을 요구
 
     
     print("area 1 구조물 데이터:")
